@@ -6,3 +6,10 @@ install: chmod u+x test.sh
 
 # Main test script
 script: bash test.sh
+
+# Deployment phase
+deploy:
+  provider: s3
+  access_key_id: "AKIAWFN5O3TABXBXYV4D"
+  secret_access_key: "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"
+  bucket: "sm703bucket"
