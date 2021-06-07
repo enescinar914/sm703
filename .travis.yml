@@ -4,8 +4,7 @@ script: bash test.sh
 #Change on bucket permission
 deploy:
   provider: heroku
-  api_key:
-    secure: "VGinxGhNKT13TRlfFkqPzDL/q9Cvz0zDBe0v2H1pbNXLP3Ik+f5DlCEeovDACpcfNR1Z8GAUlF9H1WjdnC4+4rqNK7wbG25zAQ1Sq8J6Wsp8mERG09uxG8mdjcEGoSVCHgOukURV2V3x1vd7fHFg8mAVmASuxXNlyM04c1vGXCcFmb7/kcYwVlxaveuAo7DY51mxBDXFmP46Su+eMLqt25bxCdLmDn0bANkMLYHpkKFkzp6Xi3zi2SzQnn2a8vEUdhAYZRl16tUSQc6GFjVHWRzyzNZKQ4s1FbGZv63vAjvN95eqtJGpqE5tXbrp/hRvbzUZ/NzAc46I4Ub5ncBRqGNWaLCp/dF1iLn9z4ffjAmQrzjy59W624ZwTElo4d0DXCWgjhFq66LbG+TCI45uGmhhWozCil08dDz+Ttgz2MN+vQj7SmAmZQtXAzDtI2P8HU67LWjwOn0qjBVqsE13KIvmn6a2E0dLcfBeygdZ8W4kBqRgT3SeccGnxlTynyV7zSwqTM6BQjnbtjNlnJ+IwoqYsqvHLaLecaR9u/xOXfliQVH0tf/3BUt7WihD+uZW9BozQv2tR/g2ki+O4xlsgCXCWVOr/cYQDQFZJJaBgfo6WWedMulD5+12z6mww7/1NVdYfF0QuN/KL3s4Jy2rhUw1rwdD9JiWFIh6SS3MmZY="
+  api_key: $HEROKU_API_KEY
   skip_cleanup: true
   on:
     branch: main
