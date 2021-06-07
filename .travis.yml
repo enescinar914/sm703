@@ -3,7 +3,7 @@ install: chmod u+x test.sh
 script: bash test.sh
 deploy:
   provider: s3
-  bucket: sm703bucket
+  bucket: "S3 Bucket"
   skip_cleanup: true
   on:
     branch: main
