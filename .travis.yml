@@ -1,0 +1,7 @@
+language: shell
+
+# Grant permission to a file
+install: chmod u+x test.sh
+
+# Main test script
+script: test.sh
