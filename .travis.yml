@@ -10,5 +10,6 @@ deploy:
     secure: "OX59mW37F6HFwnaqiE+JonT2afThxtL74kHxe8yLb72urYP6WMVfl96vf2f2SGnwxoUZvEGVIlG9z4ubKn4RmgZnFA1bN7u+GFqbUJUZCOqB32Z2yx4Hsxp9NXMXoNaTS1a5oRixhBYWcztJaNOcqYizBQAsQkwkiO1SeLp+PawC3k0Jlr+4L1oX0EdmZ+unf0tZmL5LCTMN+RVSs3/DlXdi0ajju+h27zwGxmJGnHGhL94BYYFzAk5QHLmo8+N7pJ9/zjPW5Xd+cRCxg+lbXfGtG53V4JFVo+lEFm7Nzi9jb8euAmOluOi1qhwdqzoC/tEmo7u7JqoPz3QJExLeg3rajlK9HkNKeNcKOdFWKYwNmfNE7fhzxeCsUiNXBS2S0mx/so89LxtTMwCuASsLEt1/S4ms0tb99NQ/WRnJ404XwhmAXfPix5LUFvwexy2V7C43zEhWCkkye5n3sQKMw+HDYgDyYNytaxHlWYc5/aSAms6C1oTloemHvVMOVp9sZ3ObbTsh6XSPrbSyG6Z0rronqj8/+EJSuHbJ01yzThdsj+KG3lzYrgXGpBBc4e6OsHIl7SRrSgDiI3x/X23oR3SowydUPPkJ2H/A39SvP81BYkh8kqObaWMR9uBJKBKCaQcaAYYDXWpgXSWyH2Jv9ncXwMmOwmOxNLfmDMhzjmA="
   bucket: "sm703bucket"
   skip_cleanup: true
+  region: us-east-2
   on:
     branch: main
