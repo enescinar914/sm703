@@ -5,4 +5,4 @@ language: bash
 install: chmod u+x test.sh
 
 # Main test script
-script: test.sh
+script: bash test.sh
