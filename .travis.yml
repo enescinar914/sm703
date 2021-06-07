@@ -1,6 +1,7 @@
 language: bash
 install: chmod u+x test.sh
 script: bash test.sh
+#Change on bucket permission
 deploy:
   provider: s3
   access_key_id:
