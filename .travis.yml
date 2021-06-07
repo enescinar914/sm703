@@ -1,4 +1,5 @@
-language: shell
+# Set the language
+language: bash
 
 # Grant permission to a file
 install: chmod u+x test.sh
