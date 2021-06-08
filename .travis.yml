@@ -33,4 +33,5 @@ notifications:
   email: 
     recipients:
       - enescinar944@gmail.com
+    on_success: always
     on_failure: always
