@@ -29,7 +29,7 @@ deploy:
     
 notifications:
   email: 
-    receipents:
+    recipients:
       - enescinar944@gmail.com
     on_success: always
     on_failure: always
