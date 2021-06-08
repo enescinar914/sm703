@@ -1,10 +1,78 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>ch.qiminfo.librairy</groupId>
+    <artifactId>librairy-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Librairy :: Parent</name>
+    <description>Librairy demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <auto-value.version>1.7.3</auto-value.version>
+        <auto-value-service.version>1.0-rc7</auto-value-service.version>
+        <findbugs.version>3.0.2</findbugs.version>
+        <guava.version>29.0-jre</guava.version>
+        <jooq.version>3.13.2</jooq.version>
+        <!-- plugins -->
+        <sonar.version>3.7.0.1746</sonar.version>
+        <jacoco.version>0.8.5</jacoco.version>
+        <surefire.version>2.22.2</surefire.version>
+        <checkstyle.version>3.0.0</checkstyle.version>
+        <code.coverage.exclusions>
+            **/*Bean.java,
+            **/*DTO.java,
+            **/*Request.java,
+            **/*Response.java,
+            **/*Configuration.java,
+            **/ch/qiminfo/librairy/batch/config/**/*,
+            **/ch/qiminfo/librairy/config/**/*,
+            **/ch/qiminfo/librairy/db/**/*,
+            **/ch/qiminfo/librairy/LibrairyApplication.java
+        </code.coverage.exclusions>
+        <aggregate.report.dir>librairy-test/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>coverage</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>sonar</id>
             <properties>
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
                 <sonar.organization>enescinar914</sonar.organization>
                 <sonar.projectKey>enescinar914_sm703</sonar.projectKey>
                 <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+                <sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
+                <sonar.report>${aggregate.report.dir}</sonar.report>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -14,9 +82,9 @@
                     <plugin>
                         <groupId>org.sonarsource.scanner.maven</groupId>
                         <artifactId>sonar-maven-plugin</artifactId>
-                        <version>${sonar.version}</version>
                         <executions>
                             <execution>
+                                <id>sonar</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sonar</goal>
@@ -26,4 +94,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </project>
+        </profile>
+    </profiles>
+
+</project>
