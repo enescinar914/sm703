@@ -7,6 +7,7 @@ deploy:
   access_key_id: $ACCESS_KEY_ID
   secret_access_key: $SECRET_ACCESS_KEY
   bucket: "sm703bucket"
+  region: us-east-2
   skip_cleanup: true
   on:
     branch: main
