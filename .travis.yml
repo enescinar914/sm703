@@ -3,6 +3,7 @@ dist: bionic
 language: java
 jdk: openjdk11
 
+if: branch IN (main, development, qa)
 
 addons:
   sonarcloud:
