@@ -3,8 +3,10 @@ install: chmod u+x test.sh
 script: bash test.sh
 #Change on bucket permission
 deploy:
-  provider: heroku
-  api_key: $HEROKU_API_KEY
+  provider: s3
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
+  bucket: "sm703bucket"
   skip_cleanup: true
   on:
     branch: main
