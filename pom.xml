@@ -1,4 +1,4 @@
-<profile>
+<project>
             <id>sonar</id>
             <properties>
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -26,4 +26,4 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+        </project>
