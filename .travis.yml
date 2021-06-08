@@ -26,3 +26,9 @@ deploy:
   skip_cleanup: true
   on:
     branch: main
+    
+notifications:
+  email:
+    - enescinar944@gmail.com
+    on_success: always
+    on_failure: always
