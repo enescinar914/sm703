@@ -1,11 +1,17 @@
+os: linux
+dist: bionic 
 language: bash
+jdk: openjdk11
+
 
 addons:
   sonarcloud:
     organization: "enescinar914"
     token: $SONAR_TOKEN
     
-install: chmod u+x test.sh
+install: 
+  - chmod u+x test.sh
+  - java --version
 
 script: 
   - bash test.sh
