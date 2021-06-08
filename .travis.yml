@@ -32,7 +32,7 @@ deploy:
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
     secret_access_key: $SECRET_ACCESS_KEY
-    bucket: "dev"
+    bucket: "developmentsm703"
     region: us-east-2
     skip_cleanup: true
     on:
@@ -41,7 +41,7 @@ deploy:
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
     secret_access_key: $SECRET_ACCESS_KEY
-    bucket: "qa"
+    bucket: "qasm703"
     region: us-east-2
     skip_cleanup: true
     on:
