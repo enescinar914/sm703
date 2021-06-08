@@ -3,6 +3,7 @@ dist: bionic
 language: java
 jdk: openjdk11
 
+if: branch IN (main, development, qa)
 
 addons:
   sonarcloud:
@@ -36,7 +37,7 @@ deploy:
     region: us-east-2
     skip_cleanup: true
     on:
-      branch: dev
+      branch: development
     
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
