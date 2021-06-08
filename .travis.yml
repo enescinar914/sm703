@@ -1,6 +1,6 @@
 os: linux
 dist: bionic 
-language: bash
+language: java
 jdk: openjdk11
 
 
@@ -9,12 +9,10 @@ addons:
     organization: "enescinar914"
     token: $SONAR_TOKEN
     
-install: 
-  - chmod u+x test.sh
+before_install: 
   - java --version
 
-script: 
-  - bash test.sh
+after_script:   
   - sonar-scanner
 
 deploy:
