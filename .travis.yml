@@ -1,7 +1,16 @@
 language: bash
+
+addons:
+  sonarcloud:
+    organization: "enescinar914"
+    token: $SONAR_TOKEN
+    
 install: chmod u+x test.sh
-script: bash test.sh
-#Change on bucket permission
+
+script: 
+  - bash test.sh
+  - sonar-scanner
+
 deploy:
   provider: s3
   access_key_id: $ACCESS_KEY_ID
