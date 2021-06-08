@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello World SM703 !"
+echo "Hello World SM703!"
