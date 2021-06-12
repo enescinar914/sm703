@@ -29,6 +29,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: main
+      bozuyorumfjjfnsdo
     
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
