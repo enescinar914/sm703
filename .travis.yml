@@ -12,15 +12,26 @@ addons:
     
 before_install: 
   - java --version
+  - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.8.8/terraform_0.8.8_linux_amd64.zip
+  - unzip /tmp/terraform.zip -d /tmp
+  - mkdir ~/bin
+  - mv /tmp/terraform ~/bin
+  - export PATH="~/bin:$PATH"
   
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=enescinar914_sm703
+  - terraform plan ./terraform
 
 after_script:
   - sonar-scanner
 
 deploy:
+  - provider: script
+    skip_cleanup: true
+    script: terraform apply ./terraform
+    on:
+      branch: main
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
     secret_access_key: $SECRET_ACCESS_KEY
