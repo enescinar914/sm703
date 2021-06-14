@@ -14,7 +14,6 @@ before_install:
   - java --version
   - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.8.8/terraform_0.8.8_linux_amd64.zip
   - unzip /tmp/terraform.zip -d /tmp
-  - mkdir ~/bin
   - mv /tmp/terraform ~/bin
   - export PATH="~/bin:$PATH"
   
