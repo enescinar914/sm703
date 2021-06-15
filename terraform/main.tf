@@ -1,5 +1,6 @@
 resource "aws_s3_bucket_object" "object" {
   bucket = "sm703bucket"
+  key = "TF_key"
   region = "us-east-2"
   source = "."
 
