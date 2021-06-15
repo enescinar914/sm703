@@ -1,7 +1,6 @@
 resource "aws_s3_bucket_object" "object" {
   bucket = "sm703bucket"
   key = "TF_key"
-  region = "us-east-2"
   source = "."
 
   # The filemd5() function is available in Terraform 0.11.12 and later
