@@ -20,7 +20,7 @@ before_install:
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=enescinar914_sm703
-  - AWS_DEFAULT_REGION='us-east-2' terraform plan ./terraform/main.tf
+  - AWS_DEFAULT_REGION='us-east-2' terraform plan ./terraform
 
 after_script:
   - sonar-scanner
