@@ -28,7 +28,7 @@ after_script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: terraform apply ./terraform
+   # script: terraform apply ./terraform
     on:
       branch: main
   - provider: s3
