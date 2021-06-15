@@ -26,11 +26,11 @@ after_script:
   - sonar-scanner
 
 deploy:
-  - provider: script
-    skip_cleanup: true
+ # - provider: script
+   # skip_cleanup: true
    # script: terraform apply ./terraform
-    on:
-      branch: main
+    #on:
+   #   branch: main
   - provider: s3
     access_key_id: $ACCESS_KEY_ID
     secret_access_key: $SECRET_ACCESS_KEY
